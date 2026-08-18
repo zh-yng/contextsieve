@@ -1,6 +1,8 @@
 {
-  "name": "Gemini Context Studio",
+  "name": "ContextSieve",
   "description": "Chat with Gemini with real-time context window inspection, token budgeting, and smart pruning/summarization tools when nearing capacity.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

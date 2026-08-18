@@ -41,13 +41,13 @@ import {
 } from './utils/tokenEstimator';
 
 const INITIAL_SYSTEM_PROMPT =
-  'You are a high-efficiency AI assistant on Gemini Context Studio. Provide clear, direct, and factual responses. When discussing code or architecture, be thorough and highlight key design considerations.';
+  'You are a high-efficiency AI assistant on a Gemini Context Studio. Provide clear, direct, and factual responses. When discussing code or architecture, be thorough and highlight key design considerations.';
 
 const INITIAL_MESSAGES: ChatMessage[] = [
   {
     id: 'init-1',
     role: 'model',
-    content: `👋 **Welcome to Gemini Context Studio!**
+    content: `👋 **Welcome to ContextSieve for Gemini!**
 
 This application allows you to chat with Gemini while giving you complete visibility and dynamic control over the **Context Window**:
 
@@ -265,10 +265,10 @@ export default function App() {
                   prev.map((msg) =>
                     msg.id === botMsgId
                       ? {
-                          ...msg,
-                          content: accumulatedText,
-                          tokens: estimateTokens(accumulatedText),
-                        }
+                        ...msg,
+                        content: accumulatedText,
+                        tokens: estimateTokens(accumulatedText),
+                      }
                       : msg
                   )
                 );
@@ -278,10 +278,10 @@ export default function App() {
                   prev.map((msg) =>
                     msg.id === botMsgId
                       ? {
-                          ...msg,
-                          content: data.fullText || accumulatedText,
-                          tokens: data.usage.candidatesTokenCount,
-                        }
+                        ...msg,
+                        content: data.fullText || accumulatedText,
+                        tokens: data.usage.candidatesTokenCount,
+                      }
                       : msg
                   )
                 );
@@ -301,9 +301,9 @@ export default function App() {
           prev.map((msg) =>
             msg.id === botMsgId
               ? {
-                  ...msg,
-                  content: `⚠️ **Generation Error**: ${cleanMsg}\n\n*Tip: Try clicking SEND again or optimize context density with Prune/Summarize.*`,
-                }
+                ...msg,
+                content: `⚠️ **Generation Error**: ${cleanMsg}\n\n*Tip: Try clicking SEND again or optimize context density with Prune/Summarize.*`,
+              }
               : msg
           )
         );
