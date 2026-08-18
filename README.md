@@ -1,18 +1,18 @@
 # ContextSieve
 > Control **EXACTLY** what your agent knows when the context window is about to overflow!
 
-ContextSieve offers multiple tools for **transparent** context window management on Gemini chats, offering a **show/hide-based** UI/UX system per prompt/response that anyone can understand. Try it out using the quickstart instructions I've provided below.
+ContextSieve offers multiple tools for **transparent** context window management on Gemini chats, offering a **show/hide-based** UI/UX system per prompt/response that anyone can understand. Define a context limit, and ContextSieve will offer timely alerts and provide solutions to optimize the context stack. Try it out now!
 
 ## Key Features
 
-* **Live Token Telemetry**: Track breakdown across system prompt, user inputs, assistant outputs.
-* **Near-Capacity Monitoring**: Alerts when nearing context limits.
+* **Live Token Telemetry**: Track token breakdowns across the system prompt, user inputs and assistant outputs.
+* **Near-Capacity Monitoring**: Sends alerts before a user-defined context limit.
 * **AI Context Summarizer**: Compress old turns into executive summaries.
-* **Sliding Window Pruning**: Retain recent turns; preserve pinned facts.
-* **Active Context Toggling**: Omit verbose messages from context without deleting transcript history.
-* **Inline Editing**: Modify long code or text directly inside active window.
+* **Sliding Window Pruning**: Retain recent chats and preserve pinned facts.
+* **Active Context Toggling**: Omit verbose response blocks individually from the context.
+* **Inline Editing**: Modify context blocks directly inside the active window.
 
-Just one round of summarization + trimming filler text, and **ContextSieve cleared 79.9% of the context window** (see below)!
+Just one round of summarization + trimming filler text, and **ContextSieve saved 79.9% of the context window** (see below)!
 
 <p align="center">
 <img width="48%" alt="Screenshot 2026-08-18 at 3 15 51 PM" src="https://github.com/user-attachments/assets/6f90589d-7767-4218-ac77-7d11d220f6c5" />
