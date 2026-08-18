@@ -1,7 +1,7 @@
 # ContextSieve
 > Control **EXACTLY** what your agent knows when the context window is about to overflow!
 
-ContextSieve offers multiple tools for **transparent** context window management on Gemini chats, offering a **show/hide-based** UI/UX system per prompt/response that anyone can understand. Define a context limit, and ContextSieve will offer timely alerts and provide solutions to optimize the context stack. Try it out now!
+ContextSieve offers multiple tools for **transparent** context window management on Gemini chats, offering a **show/hide-based** UI/UX system per prompt/response that anyone can understand. Define a context limit, and you'll get timely alerts and options to optimize the context stack as it fills up. Try it out now!
 
 ## Key Features
 
