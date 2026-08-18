@@ -1,41 +1,27 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# ContextSieve
 
-# Run and deploy your AI Studio app
+ContextSieve offers interactive context window management on Gemini chats (ft. live telemetry and dynamically managed memory!).
 
-This contains everything you need to run your app locally.
+## Key Features
 
-View your app in AI Studio: https://ai.studio/apps/540d2fc6-8896-4fb1-92e2-66180402a742
+* **Live Token Telemetry**: Track breakdown across system prompt, user inputs, assistant outputs.
+* **Near-Capacity Monitoring**: Alerts when nearing context limits.
+* **AI Context Summarizer**: Compress old turns into executive summaries.
+* **Sliding Window Pruning**: Retain recent turns; preserve pinned facts.
+* **Active Context Toggling**: Omit verbose messages from context without deleting transcript history.
+* **Inline Editing**: Modify long code or text directly inside active window.
 
-## Run Locally
+Just one round of context summarization (nothing else, even) and we get crazy improvements (see below)!
 
-**Prerequisites:**  Node.js
+<p align="center">
+  <img width="48%" alt="Screenshot 2026-08-18 at 1 54 55 PM" src="https://github.com/user-attachments/assets/44613cc4-6d26-4544-b517-d364aa3ca271" />
+  <img width="48%" alt="Screenshot 2026-08-18 at 1 55 43 PM" src="https://github.com/user-attachments/assets/d8f64408-d4d2-4c15-a151-0942678347f2" />
+</p>
 
+## Quickstart
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. Clone repository:
 
-## Deploy to GitHub Pages (GitHub Actions)
-
-This repo now includes a workflow at [.github/workflows/deploy-pages.yml](/Users/zoeyzoella/Downloads/contextsieve/.github/workflows/deploy-pages.yml) that builds and deploys on pushes to `main`/`master`.
-
-### One-time GitHub setup
-
-1. Go to your repository **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-3. (Recommended) Add repository variable `VITE_API_BASE_URL` in **Settings → Secrets and variables → Actions → Variables**.  
-   Example: `https://your-backend.example.com`
-
-The frontend now reads `VITE_API_BASE_URL` (from [src/App.tsx](/Users/zoeyzoella/Downloads/contextsieve/src/App.tsx)).  
-If unset, it defaults to `/api` (local/server deployment behavior).
-
-### Deploy
-
-Push to `main` (or run the workflow manually from the Actions tab).  
-Your site will publish to:
-
-`https://<your-github-username>.github.io/<repo-name>/`
+   ```bash
+   git clone [https://github.com/user/ContextSieve.git](https://github.com/user/ContextSieve.git)
+   cd ContextSieve
