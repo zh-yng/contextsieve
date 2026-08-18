@@ -77,6 +77,9 @@ const DEFAULT_MODELS: ModelOption[] = [
   },
 ];
 
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL ?? '').replace(/\/$/, '');
+const apiUrl = (path: string) => `${API_BASE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+
 function cleanErrorMessage(rawError: any): string {
   if (!rawError) return 'An unexpected error occurred.';
   let msg = typeof rawError === 'string' ? rawError : rawError.message || String(rawError);
@@ -149,7 +152,7 @@ export default function App() {
 
   // Fetch models from server
   useEffect(() => {
-    fetch('/api/models')
+    fetch(apiUrl('/api/models'))
       .then((res) => res.json())
       .then((data) => {
         if (data.models && Array.isArray(data.models)) {
@@ -215,7 +218,7 @@ export default function App() {
     setMessages((prev) => [...prev, initialBotMessage]);
 
     try {
-      const response = await fetch('/api/chat/stream', {
+      const response = await fetch(apiUrl('/api/chat/stream'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -356,7 +359,7 @@ export default function App() {
 
     try {
       const targetMessages = messages.filter((m) => messageIds.includes(m.id));
-      const res = await fetch('/api/summarize-context', {
+      const res = await fetch(apiUrl('/api/summarize-context'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -504,7 +507,7 @@ export default function App() {
     setIsSummarizing(true);
     try {
       const activeMsgs = messages.filter((m) => m.isActive);
-      const res = await fetch('/api/extract-memories', {
+      const res = await fetch(apiUrl('/api/extract-memories'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: activeMsgs }),
