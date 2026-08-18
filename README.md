@@ -1,27 +1,54 @@
 # ContextSieve
 
-ContextSieve offers interactive context window management on Gemini chats (ft. live telemetry and dynamically managed memory!).
+ContextSieve offers interactive context window management on Gemini chats with live telemetry and dynamic memory controls.
 
-## Key Features
+## Local setup
 
-* **Live Token Telemetry**: Track breakdown across system prompt, user inputs, assistant outputs.
-* **Near-Capacity Monitoring**: Alerts when nearing context limits.
-* **AI Context Summarizer**: Compress old turns into executive summaries.
-* **Sliding Window Pruning**: Retain recent turns; preserve pinned facts.
-* **Active Context Toggling**: Omit verbose messages from context without deleting transcript history.
-* **Inline Editing**: Modify long code or text directly inside active window.
+### Prerequisites
 
-Just one round of context summarization (nothing else, even) and we get crazy improvements (see below)!
+- Node.js 18+
+- A Gemini API key
 
-<p align="center">
-  <img width="48%" alt="Screenshot 2026-08-18 at 1 54 55 PM" src="https://github.com/user-attachments/assets/44613cc4-6d26-4544-b517-d364aa3ca271" />
-  <img width="48%" alt="Screenshot 2026-08-18 at 1 55 43 PM" src="https://github.com/user-attachments/assets/d8f64408-d4d2-4c15-a151-0942678347f2" />
-</p>
+### Install and run
 
-## Quickstart
-
-1. Clone repository:
+1. Clone the repo:
 
    ```bash
-   git clone [https://github.com/user/ContextSieve.git](https://github.com/user/ContextSieve.git)
+   git clone https://github.com/<your-user>/<your-repo>.git
    cd ContextSieve
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Create a local environment file with your API key:
+
+   ```bash
+   echo "GEMINI_API_KEY=your_api_key_here" > .env
+   ```
+
+   You can also use `.env.local`; the server loads both.
+
+4. Start the app:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open:
+
+   ```text
+   http://localhost:3000
+   ```
+
+The app runs locally with the Express backend in [server.ts](/Users/zoeyzoella/Downloads/contextsieve/server.ts). The frontend and API are served from the same local server.
+
+## Scripts
+
+- `npm run dev` — run locally
+- `npm run build` — production build
+- `npm run start` — start the built production server
+- `npm run lint` — TypeScript check
