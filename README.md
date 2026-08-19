@@ -24,7 +24,7 @@ Just one round of summarization + trimming filler text, and **ContextSieve saved
 
 1. Clone repo:
    ```bash
-   git clone [https://github.com/user/ContextSieve.git](https://github.com/user/ContextSieve.git)
+   git clone [https://github.com/zh-yng/ContextSieve.git](https://github.com/zh-yng/ContextSieve.git)
    cd ContextSieve
    ```
 
